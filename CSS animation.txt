@@ -1,0 +1,31 @@
+
+.square {
+  animation-name: move, blink; 
+  animation-duration: 1s, 200ms; /* tempo de duração das animações */
+  animation-fill-mode: forwards; /* quando chegar no final da animação, guardar as informações setadas para esse to */
+  animation-direction: alternate; /* fazer a animação ir e voltar */
+  animation-iteration-count: infinite; /* fazer a animação ir e voltar, a quantidade de vezes*/
+  /* animation-delay: 2s; */
+  animation-timing-function: steps(10); /* velocidade de ida e volta */
+}
+
+.square:hover {
+  animation-play-state: paused; /* quando passar o mouse, ele para */
+}
+
+@keyframes move {
+  /* to */
+  100% {
+    transform: translateX(calc(100vw - 100% - 16px)); /* deixar a movimentação do outro lado do seu inicio */
+  }
+}
+
+@keyframes blink { /* faz a animação piscar /*
+  0%, 100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
